@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+import pandas as pd
 
 
 app= FastAPI()
@@ -15,6 +15,7 @@ def mensaje():
 
 
 def desarrollador(developer:str):
+    df = pd.read_parquet(r'C:\Users\juanc.DESKTOP-LGMDQP1\OneDrive\Documentos\Proyecto Henry 01\Datos Limpios\output_games_clean.parquet')
     filtro_developer= df[df["developer"] == developer]
     cantidad_items=filtro_developer["id"].count()
     free_por_año= filtro_developer.groupby("release_date").agg({
