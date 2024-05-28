@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Query
 import pandas as pd
 import uvicorn
+import os
 
 app = FastAPI()
 
@@ -11,7 +12,7 @@ def mensaje():
 # Consulta 1
 @app.get("/developer/")
 def desarrollador(developer: str):
-    df = pd.read_parquet(r'C:\Users\juanc.DESKTOP-LGMDQP1\OneDrive\Documentos\Proyecto Henry 01\Datos Limpios\output_games_clean.parquet')
+    df = pd.read_parquet(r"C:\Users\juanc.DESKTOP-LGMDQP1\OneDrive\Documentos\Proyecto Henry 01\Datos Limpios\output_games_clean.parquet")
     filtro_developer = df[df["developer"] == developer]
     cantidad_items = filtro_developer["id"].count()
     
