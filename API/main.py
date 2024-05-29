@@ -12,6 +12,10 @@ default_parquet_path = os.path.join("Datos Limpios", "output_games_clean.parquet
 parquet_path = os.getenv("parquet_path", default_parquet_path)
 df_games = pd.read_parquet(parquet_path)
 
+@app.get("/")
+def read_root():
+    return {"Bienvenidos al modelo de recomendacion de steam"}
+
 # Consulta 1
 @app.get("/developer/")
 def desarrollador(developer: str):
