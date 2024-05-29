@@ -10,7 +10,7 @@ def mensaje():
     return {"mensaje": "Bienvenido a la API de datos de steam"}
 
 
-default_parquet_path = r"C:\Users\juanc.DESKTOP-LGMDQP1\OneDrive\Documentos\Proyecto Henry 01\Datos Limpios\output_games_clean.parquet"
+default_parquet_path = os.path.join("Datos Limpios", "output_games_clean.parquet")
 parquet_path = os.getenv("parquet_path", default_parquet_path)
 
 # Consulta 1
@@ -32,3 +32,10 @@ def desarrollador(developer: str):
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
+
+
+
+
+
