@@ -2,6 +2,9 @@ from fastapi import FastAPI, Query
 import pandas as pd
 import uvicorn
 import os
+from sklearn.neighbors import NearestNeighbors
+import pandas as pd
+import numpy as np
 
 app = FastAPI()
 
@@ -36,6 +39,9 @@ if __name__ == "__main__":
 
 
 
+
+
+#Modelo de recomendacion
 
 
 
